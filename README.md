@@ -27,7 +27,8 @@ Sigue estos pasos para ejecutar el proyecto en tu entorno:
 npm install
 5. Configura las variables de entorno necesarias. Copia el archivo `.env.example` a un nuevo archivo llamado `.env` y ajusta la variable `DATABASE_URL` con la ruta de tu base de datos MySQL. Por ejemplo:
 DATABASE_URL="mysql://tu-usuario:tutrabajadoracontrasena@tu-host:3306/tu-nombre-de-base-de-datos"
-6. ejecute el comando de prisma para la creacion de las tablas en la base de datos.
+6. ejecute el comando de prisma para la creacion de las tablas en la base de datos:
+   npx prisma migrate dev --name init 
 
 Asegúrate de reemplazar `tu-usuario`, `tutrabajadoracontrasena`, `tu-host`, `3306` y `tu-nombre-de-base-de-datos` con la información correcta para tu base de datos MySQL.
 
