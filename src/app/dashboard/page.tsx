@@ -20,8 +20,7 @@ function DashboardPage() {
 
   useEffect(() => {
     const verifyTemp = async () => {
-      //@ts-ignore
-      const isTemp = await axios.get(`/api/auth/temp/${session?.user?.id}`);
+      const isTemp = await axios.get(`/api/auth/temp/${(session?.user as any)?.id}`);
       setIsTemp(isTemp.data.isTemp);
     };
     if (session) {

@@ -11,8 +11,7 @@ function ProfilePage() {
   
   useEffect(() => {
     const verifyTemp = async () => {
-      //@ts-ignore
-      const isTemp = await axios.get(`/api/auth/temp/${session?.user?.id}`);
+      const isTemp = await axios.get(`/api/auth/temp/${(session?.user as any)?.id}`);
       setIsTemp(isTemp.data.isTemp);
     };
     if(session){
@@ -48,7 +47,7 @@ function ProfilePage() {
       </div>
       <div className="p-6 text-center">
         <h4 className="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
-          {session?.user?.name} {""} {session?.user?.lastname}
+          {session?.user?.name}
         </h4>
         <p className="block font-sans text-base antialiased font-medium leading-relaxed text-transparent bg-gradient-to-tr from-pink-600 to-pink-400 bg-clip-text">
           {session?.user?.email}
